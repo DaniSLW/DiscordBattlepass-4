@@ -1,0 +1,359 @@
+/* LOGO FONT */
+/*@import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
+*/
+/* TIME FONT */
+/*@import url('https://fonts.googleapis.com/css2?family=Passero+One&family=Rouge+Script&display=swap'); 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@font-face {
+	font-family: pricedown bl;
+	font-style: normal;
+	font-weight: 900;
+	src: local('Pricedown Bl'), url('https://fonts.cdnfonts.com/s/4837/pricedown bl.woff') format('woff');
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgba(15, 15, 15, 1);
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    /*background-attachment: fixed;
+    background-image: url('../img/winter-bgv3.png');
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    background-position: center;*/
+}
+header {
+    padding: 20px 50px;
+    border-bottom: 2px solid #535353;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    text-align: center;
+    width: 150px;
+    font-size: 42px;
+    color: #fff;
+    font-family: 'Pricedown Bl', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header .time_left {
+    text-align: center;
+    width: 150px;
+    font-size: 24px;
+    color: #fff;
+}
+header .profile {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    cursor: pointer;
+}
+header .profile img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+header .drop_down.active {
+    display: block;
+    transition: .2s ease-in-out;
+}
+header .drop_down {
+    display: none;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    width: 250px;
+    height: auto;
+    border-radius: 17px;
+    background-color: rgba(15, 15, 15, 1);
+    border: 2px solid #535353;
+    z-index: 99;
+}
+header .drop_down .drop_down_menu {
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+}
+header .drop_down .drop_down_header {
+    border-bottom: 2px solid #535353;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+header .drop_down .drop_down_header span {
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+}
+header .drop_down .drop_down_menu a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    border-bottom: 1px solid #535353;
+    border-radius: 3px;
+}
+header .drop_down .drop_down_menu a:hover {
+    background-color: #535353;
+    color: rgba(255, 255, 255, 0.8);
+    transition: .2s ease-in-out;
+}
+header .drop_down .drop_down_menu a:nth-last-child(1) {
+    border: 0px solid white;
+    color: #aa3333;
+}
+header .drop_down .drop_down_menu a:nth-last-child(1):hover {
+    color: #ff0000;
+    transition: .2s ease-in-out;
+}
+
+/* START OF MAIN SECTION */
+main {
+    margin: 0;
+    padding-top: 50px;
+}
+main .main_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* START PROGRESS BAR */
+main .progress_bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    height: 100px;
+    gap: 5px;
+}
+main .progress_bar .days {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main .progress_bar span {
+    color: white;
+}
+main .progress_bar .days > div {
+    width: 40px;
+    height: 30px;
+    content: '';
+    background-color: rgba(15, 15, 15, 0.8);
+    border-radius: 0 0.5rem 0.5rem 0;
+    border: 1px solid #535353;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+main .progress_bar .days.current_day > div {
+    background-color: rgba(74, 222, 128, 0.8);
+}
+main .progress_bar .days.current_day > div.step {
+    box-shadow: 0 0 6px rgba(74, 222, 128, 0.8);
+    border: 0;
+}
+
+/* GLOW (POATE E PREA MULT) */
+main .progress_bar .days.current_day .step.current{
+    animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 0px rgba(74, 222, 128, 0.4));
+    }
+    50% {
+        filter: drop-shadow(0 0 1px rgba(74, 222, 128, 0.8));
+    }
+}
+main .progress_bar .days .step{
+    width: 60px;
+}
+.step {
+    font-size: 12px;
+    position: relative;
+}
+.step.current::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #4ade80;
+    filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.8));
+    animation: sky 1s ease-in-out infinite;
+}
+@keyframes sky {
+    0%, 100% {
+        transform: translateX(-50%) rotate(180deg) translateY(0%);
+    }
+    50% {
+        transform: translateX(-50%) rotate(180deg) translateY(20%);
+    }
+}
+/*@keyframes beat {
+    from { transform: translateX(-50%) rotate(180deg) scale(1.2); }
+    to { tranform: translateX(-50%) rotate(180deg) scale(1); }
+}*/
+/* START REWARD CARDS*/
+main .rewards {
+    margin-top: 50px;
+    width: 1650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+main .rewards .reward_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    height: 280px;
+    border: 2px solid #535353;
+    border-radius: 0.75rem;
+}
+main .reward_card .reward_card_header {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 2px solid #535353;
+}
+main .reward_card .title_card {
+    font-weight: bold;
+    color: #535353;
+    text-transform: uppercase;
+}
+main .reward_card .reward_card_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+}
+main .reward_card .reward_card_container img {
+    margin: 20px 0;
+    width: 100px;
+    height: 100px;
+}
+main .reward_card.active .reward_card_container img {
+    animation: glowPulse 2s ease-in-out infinite;
+}
+@keyframes glowPulse {
+    0%, 100% {
+        filter:
+            drop-shadow(0 0 6px rgba(74, 222, 128, 0.4))
+            drop-shadow(0 0 14px rgba(74, 222, 128, 0.2));
+    }
+    50% {
+        filter:
+            drop-shadow(0 0 8px rgba(74, 222, 128, 0.9))
+            drop-shadow(0 0 14px rgba(74, 222, 128, 0.6));
+    }
+}
+main .reward_card .reward_card_container span {
+    color: white;
+}
+main .rewards .reward_card:hover {
+    border: 2px solid white;
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+main .reward_card:hover .title_card {
+    color: white;
+    transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+main .reward_card:hover .reward_card_header {
+    border-bottom: 2px solid white;
+    transition: 0.2s ease-in-out;
+}
+main .rewards .reward_card.claimed .reward_card_header {
+    border-bottom: 2px solid #4ade80;
+}
+main .rewards .reward_card.claimed .title_card {
+    color: #4ade80;
+}
+main .rewards .reward_card.claimed {
+    border: 2px solid #4ade80;
+}
+main .rewards .reward_card img {
+    filter: brightness(0) saturate(100%)
+            invert(32%) sepia(0%)
+            saturate(0%) hue-rotate(0deg)
+            brightness(85%);
+}
+/* ICON COMPLETE WITH COLOR */
+main .rewards .reward_card.claimed img {
+    filter: brightness(0) saturate(100%) 
+            invert(65%) sepia(80%) 
+            saturate(400%) hue-rotate(90deg);
+}
+main .rewards .reward_card.active .title_card {
+    color: white;
+}
+main .rewards .reward_card.active .reward_card_header {
+    border-bottom: 2px solid white;
+}
+main .rewards .reward_card.active {
+    border: 2px solid white;
+}
+.copy-right {
+    position: absolute;
+    top: 25%;
+    left: 27.5%;
+    z-index: 99;
+    opacity: 0.2;
+}
+.copy-right span {
+    opacity: 0.2;
+    font-size: 300px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+}
+
+/* START OF ANIMATIONS */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-100%);
+    transition: all 1s;
+    transition-delay: 100ms;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+.left-content > .btn, .right-content {
+    animation: fade-in 1s;
+}
+@keyframes fade-in {
+    from { transform: translateY(-200%); }
+    to { tranform: translateY(0); }
+}
+/* END OF ANIMATIONS */
