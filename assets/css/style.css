@@ -402,6 +402,10 @@ main .rewards .reward_card .claim_button:hover {
         top: 85px;
         width: 220px;
     }
+
+    .copy-right {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
@@ -425,7 +429,7 @@ main .rewards .reward_card .claim_button:hover {
 
 .copy-right {
     position: absolute;
-    top: 35%;
+    top: 40%;
     left: 22.5%;
     z-index: 0;
     opacity: 0.2;
@@ -434,5 +438,6 @@ main .rewards .reward_card .claim_button:hover {
     opacity: 0.2;
     font-size: 300px;
     font-family: 'Times New Roman', Times, serif;
+    flex-wrap: nowrap;
     color: #fff;
 }
