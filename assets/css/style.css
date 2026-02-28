@@ -403,10 +403,6 @@ main .rewards .reward_card .claim_button:hover {
         width: 220px;
     }
 
-    main .rewards .reward_card {
-        height: 250px;
-    }
-
     .copy-right {
         display: none;
     }
@@ -419,7 +415,6 @@ main .rewards .reward_card .claim_button:hover {
     main .rewards .reward_card {
         flex: 0 0 175px;
         max-width: 100%;
-        height: 250px;
     }
     main .reward_card .reward_card_container img {
         width: 80px;
