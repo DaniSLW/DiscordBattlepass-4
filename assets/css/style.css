@@ -417,6 +417,9 @@ main .rewards .reward_card .claim_button:hover {
         width: 80px;
         height: 80px;
     }
+    .copy-right {
+        display: none;
+    }
 }
 
 
