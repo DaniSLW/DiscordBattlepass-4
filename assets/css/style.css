@@ -325,7 +325,7 @@ main .rewards .reward_card .claim_button {
     color: #fff;
     font-weight: 600;
     font-size: 16px;
-    padding: 5px 20px;
+    padding: 5px 25px;
     border-radius: 8px;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -422,9 +422,9 @@ main .rewards .reward_card .claim_button:hover {
 
 .copy-right {
     position: absolute;
-    top: 25%;
-    left: 27.5%;
-    z-index: 99;
+    top: 35%;
+    left: 22.5%;
+    z-index: 0;
     opacity: 0.2;
 }
 .copy-right span {
