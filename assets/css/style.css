@@ -424,6 +424,9 @@ main .rewards .reward_card .claim_button:hover {
     .copy-right {
         display: none;
     }
+    main .rewards .reward_card .claim_button {
+        margin-top: 0px;
+    }
 }
 
 
