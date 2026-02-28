@@ -112,7 +112,7 @@ header .drop_down .drop_down_menu a:nth-last-child(1):hover {
 /* START OF MAIN SECTION */
 main {
     margin: 0;
-    padding-top: 50px;
+    padding: 15px 0;
 }
 main .main_menu {
     display: flex;
@@ -131,6 +131,7 @@ main .progress_bar {
     width: 100%;
     max-width: 100%;
     padding-top: 30px;
+    padding-bottom: 20px;
     margin: 0;
 
     overflow-x: auto;
@@ -276,7 +277,7 @@ main .reward_card .reward_card_container span {
 }
 main .rewards .reward_card:hover {
     border: 2px solid white;
-    transform: scale(1.1);
+    transform: scale(1.075);
     transition: 0.2s ease-in-out;
 }
 main .reward_card:hover .title_card {
@@ -402,7 +403,7 @@ main .rewards .reward_card.active {
 
 @media (max-width: 480px) {
     main .rewards {
-        gap: 15px;
+        gap: 20px;
     }
     main .rewards .reward_card {
         flex: 0 0 175px;
