@@ -1,9 +1,3 @@
-/* LOGO FONT */
-/*@import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
-*/
-/* TIME FONT */
-/*@import url('https://fonts.googleapis.com/css2?family=Passero+One&family=Rouge+Script&display=swap'); 
-*/
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
 @font-face {
 	font-family: pricedown bl;
@@ -131,15 +125,21 @@ main .progress_bar {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1500px;
-    height: 100px;
     gap: 5px;
+
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 main .progress_bar .days {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex: 0 0 auto;
 }
 main .progress_bar span {
     color: white;
@@ -166,7 +166,7 @@ main .progress_bar .days.current_day > div.step {
     border: 0;
 }
 
-/* GLOW (POATE E PREA MULT) */
+/* GLOW */
 main .progress_bar .days.current_day .step.current{
     animation: glow 2s ease-in-out infinite;
 }
@@ -208,17 +208,17 @@ main .progress_bar .days .step{
         transform: translateX(-50%) rotate(180deg) translateY(20%);
     }
 }
-/*@keyframes beat {
-    from { transform: translateX(-50%) rotate(180deg) scale(1.2); }
-    to { tranform: translateX(-50%) rotate(180deg) scale(1); }
-}*/
 /* START REWARD CARDS*/
 main .rewards {
     margin-top: 50px;
-    width: 1650px;
+
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 25px;
     flex-wrap: wrap;
 }
@@ -357,3 +357,58 @@ main .rewards .reward_card.active {
     to { tranform: translateY(0); }
 }
 /* END OF ANIMATIONS */
+
+/* START OF RESPONSIVE LAYOUT */
+@media (max-width: 1400px) {
+    main .progress_bar {
+        justify-content: flex-start;
+        padding-left: 15px;
+        padding-right: 15px;
+        scroll-behavior: smooth;
+    }
+    main .progress_bar::webkit-scrollbar {
+        height: 4px;
+    }
+    main .progress_bar::webkit-scrollbar-thumb {
+        background-color: #535353;
+        border-radius: 10px;
+    }
+    main .progress_bar .days > div {
+        width: 36px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    header {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    header .time-left {
+        font-size: 18px;
+        width: auto;
+    }
+    header .profile {
+        width: auto;
+    }
+    header .drop_down {
+        right: 20px;
+        top: 85px;
+        width: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    main .rewards {
+        gap: 15px;
+    }
+    main .rewards .reward_card {
+        flex: 0 0 175px;
+        max-width: 100%;
+        height: 250px;
+    }
+    main .reward_card .reward_card_container img {
+        width: 80px;
+        height: 80px;
+    }
+}
