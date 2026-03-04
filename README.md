@@ -16,7 +16,7 @@
   <img src="assets/img/preview.png" width="700" />
 </p>
 
-🔗 Live Demo: https://danislw.github.io/Custom-Alerts/
+🔗 Live Demo: https://danislw.github.io/Battlepass-Template-1/
 
 *You can test the library directly through GitHub Pages.*
 
